@@ -1,0 +1,141 @@
+// global.scss - Глобальные стили
+@use 'variables' as *;
+@use 'colors' as *;
+@use 'sass:color';
+
+// Глобальные стили
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-p2;
+  line-height: $line-height-p2;
+  color: $secondary-1;
+  background-color: $background;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+footer {
+  background-color: $background-4;
+  color: $secondary-3;
+  padding-top: 64px;
+  padding-bottom: 32px;
+}
+
+// Контейнеры
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 0 16px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0 12px;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 20px;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 0 16px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0 12px;
+  }
+}
+
+// Утилиты для цветов фона
+.bg-primary-1 { background-color: $primary-1; }
+.bg-primary-2 { background-color: $primary-2; }
+.bg-primary-3 { background-color: $primary-3; }
+.bg-secondary-1 { background-color: $secondary-1; }
+.bg-secondary-4 { background-color: $secondary-4; }
+.bg-secondary-3 { background-color: $secondary-3; }
+.bg-accent { background-color: $accent; }
+.bg-white { background-color: $background; }
+
+// Утилиты для цветов текста
+.color-primary-1 { color: $primary-1; }
+.color-primary-2 { color: $primary-2; }
+.color-primary-3 { color: $primary-3; }
+.color-secondary-1 { color: $secondary-1; }
+.color-secondary-4 { color: $secondary-4; }
+.color-secondary-3 { color: $secondary-3; }
+.color-accent { color: $accent; }
+
+// Утилиты для отступов
+@for $i from 0 through 20 {
+  .m-#{$i} { margin: #{$i * 4}px; }
+  .mt-#{$i} { margin-top: #{$i * 4}px; }
+  .mb-#{$i} { margin-bottom: #{$i * 4}px; }
+  .ml-#{$i} { margin-left: #{$i * 4}px; }
+  .mr-#{$i} { margin-right: #{$i * 4}px; }
+  .mx-#{$i} { margin-left: #{$i * 4}px; margin-right: #{$i * 4}px; }
+  .my-#{$i} { margin-top: #{$i * 4}px; margin-bottom: #{$i * 4}px; }
+
+  .p-#{$i} { padding: #{$i * 4}px; }
+  .pt-#{$i} { padding-top: #{$i * 4}px; }
+  .pb-#{$i} { padding-bottom: #{$i * 4}px; }
+  .pl-#{$i} { padding-left: #{$i * 4}px; }
+  .pr-#{$i} { padding-right: #{$i * 4}px; }
+  .px-#{$i} { padding-left: #{$i * 4}px; padding-right: #{$i * 4}px; }
+  .py-#{$i} { padding-top: #{$i * 4}px; padding-bottom: #{$i * 4}px; }
+}
+
+// Кнопки
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-p2;
+  transition: all 0.3s ease;
+
+  &-primary {
+    background-color: $primary-1;
+    color: $secondary-4;
+
+    &:hover {
+      background-color: $primary-3;
+    }
+  }
+
+  &-accent {
+    background-color: $accent;
+    color: $secondary-1;
+
+    &:hover {
+      background-color: color.scale($accent, $lightness: -10%);
+    }
+  }
+
+  &-outline {
+    background-color: transparent;
+    border: 2px solid $primary-1;
+    color: $primary-1;
+
+    &:hover {
+      background-color: $primary-1;
+      color: $secondary-4;
+    }
+  }
+}

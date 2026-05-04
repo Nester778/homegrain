@@ -1,0 +1,25 @@
+// colors.scss - Цветовая схема проекта
+
+// Primary цвета
+$primary-1: #313417;
+$primary-2: #CED5C4;
+$primary-3: #8B9E70;
+
+// Secondary цвета
+$secondary-1: #232422;
+$secondary-4: #FEFFFC;
+$secondary-3: #C2C2C2;
+
+// Accent
+$accent: #FAB722;
+
+// Background
+$background: #FFFFFF;
+$background-4: #1A1C0C;
+
+// Семантические цвета (для удобства)
+$text-primary: $secondary-1;
+$text-secondary: $secondary-4;
+$text-muted: $secondary-3;
+$border-color: $primary-2;
+$hover-color: $primary-3;
